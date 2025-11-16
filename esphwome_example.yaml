@@ -1,0 +1,272 @@
+esphome:
+  name: testplank
+  friendly_name: Testplank
+  comment: "ESP-Wroom-32 voor testdoeleinden, BT-Proxy en BT-Tracker"
+
+esp32:
+  board: nodemcu-32s
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+
+# Debug:
+debug:
+  update_interval: 10s
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: !secret api_password
+
+ota:
+  platform: esphome
+  password: !secret_ota
+
+# WiFi instellingen:
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  power_save_mode: none
+
+# Bluetooth:
+bluetooth_proxy:
+  active: true
+esp32_ble_tracker:
+  id: ble_tracker
+  scan_parameters:
+    active: true 
+
+# Tijd Synchroniseren met Home Assistant:
+time:
+  - platform: homeassistant
+    id: huidige_tijd
+    on_time_sync:
+      - component.update: uptime_timestamp
+
+# IR Ontvanger:
+#remote_receiver:
+  #pin:
+    #number: 14
+    #inverted: true
+  #dump: raw
+
+# IR Zender:
+remote_transmitter:
+  pin: 23
+  carrier_duty_percent: 50%                       
+
+# Bediening Kaarsen
+button:
+  - platform: template
+    name: "Aan"
+    id: aan
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [154, -5501, 9114, -4479, 639, -496, 640, -497, 612, -521, 640, -494, 641, -494, 641, -494, 641, -494, 640, -495, 614, -1629, 640, -1604, 614, -1629, 615, -1628, 668, -1576, 641,
+                 -1602, 615, -1628, 615, -1629, 639, -1604, 640, -495, 639, -1604, 641, -494, 614, -521, 615, -520, 614, -1629, 641, -494, 614, -521, 641, -1602, 615, -520, 615, -1629, 614, -1629, 
+                 614, -1629, 614, -521, 614, -1628, 641]
+  - platform: template
+    name: "Uit"
+    id: uit
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9109, -4479, 613, -521, 587, -547, 641, -493, 612, -523, 668, -466, 613, -470, 691, -497, 640, -493, 587, -1655, 587, -1656, 560, -1681, 614, -1629, 612, -1630, 667, -1575, 587,
+                 -1655, 669, -1573, 703, -1538, 587, -1655, 613, -1629, 640, -494, 612, -522, 639, -495, 614, -1628, 695, -439, 588, -547, 667, -467, 613, -521, 665, -1577, 613, -1629, 642, -1600, 
+                 639, -495, 613, -1629, 640]
+  - platform: template
+    name: "Optie 1"
+    id: optie_1
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9065, -4519, 571, -563, 571, -563, 571, -563, 596, -538, 596, -538, 597, -537, 571, -563, 596, -538, 571, -1671, 623, -1619, 571, -1671, 571, -1670, 572, -1670, 571, -1671, 571,
+                 -1671, 571, -1671, 597, -537, 571, -563, 571, -1671, 571, -563, 596, -538, 571, -562, 572, -1670, 571, -564, 622, -1619, 597, -1645, 570, -563, 571, -1671, 571, -1671, 571, -1670, 
+                571, -563, 572, -1670, 595]
+  - platform: template
+    name: "Optie 2"
+    id: optie_2
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9062, -4520, 571, -563, 571, -563, 573, -564, 674, -457, 571, -562, 571, -563, 571, -564, 570, -563, 572, -1670, 595, -1646, 571, -1671, 570, -1671, 571, -1670, 587, -1655, 571,
+                 -1670, 623, -1619, 571, -1670, 571, -1670, 571, -562, 571, -563, 571, -563, 571, -563, 596, -1646, 570, -563, 572, -562, 571, -563, 597, -1645, 571, -1670, 572, -1670, 572, -1670, 
+                571, -563, 571, -1671, 595]
+  - platform: template
+    name: "Optie 3"
+    id: optie_3
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9066, -4520, 570, -564, 571, -563, 571, -563, 572, -563, 571, -563, 572, -563, 571, -563, 596, -538, 572, -1671, 571, -1671, 571, -1671, 572, -1671, 623, -1619, 571, -1671, 572,
+                 -1670, 572, -1670, 624, -1618, 572, -1671, 571, -1670, 650, -485, 571, -566, 673, -458, 572, -562, 572, -563, 571, -563, 571, -563, 596, -538, 572, -1670, 624, -1619, 647, -1594,
+                 571, -1672, 571, -1671, 570]                                                                        
+  - platform: template
+    name: "Optie 4"
+    id: optie_4
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9072, -4522, 680, -455, 597, -537, 571, -564, 596, -538, 599, -536, 597, -506, 603, -564, 650, -484, 637, -1606, 572, -1671, 572, -1671, 572, -1671, 572, -1671, 572, -1671, 572,
+                 -1672, 571, -1672, 571, -1672, 571, -564, 571, -563, 572, -1672, 571, -564, 571, -563, 572, -563, 572, -563, 572, -563, 597, -1647, 571, -1672, 572, -563, 572, -1672, 571, -1673, 
+                571, -1672, 572, -1672, 624]
+  - platform: template
+    name: "Optie 5"
+    id: optie_5
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9090, -4491, 597, -537, 598, -536, 598, -536, 598, -536, 598, -536, 598, -536, 598, -536, 595, -535, 600, -1646, 597, -1644, 598, -1644, 597, -1644, 598, -1643, 598, -1643, 599,
+                 -1644, 597, -1644, 595, -539, 778, -1463, 598, -1644, 598, -536, 597, -1644, 598, -536, 598, -536, 597, -536, 598, -1644, 598, -536, 597, -537, 598, -1643, 598, -536, 597, -1644, 
+                598, -1644, 597, -1644, 599]
+  - platform: template
+    name: "Optie 6"
+    id: optie_6
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9093, -4489, 602, -536, 623, -512, 598, -536, 598, -536, 599, -536, 598, -536, 597, -537, 599, -536, 623, -1619, 598, -1644, 599, -1644, 598, -1644, 598, -1644, 598, -1645, 598,
+                 -1644, 598, -1644, 599, -1644, 598, -536, 598, -1644, 599, -1644, 598, -536, 599, -536, 597, -537, 601, -534, 598, -536, 598, -1644, 599, -536, 599, -535, 599, -1644, 598, -1644, 
+                624, -1618, 598, -1644, 598]
+  - platform: template
+    name: "Optie 7"
+    id: optie_7
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9068, -4521, 648, -486, 572, -563, 571, -563, 572, -563, 571, -563, 597, -538, 571, -564, 571, -563, 572, -1671, 571, -1672, 571, -1671, 572, -1671, 571, -1672, 571, -1671, 572,
+                 -1671, 571, -1671, 572, -563, 625, -509, 594, -1649, 570, -1667, 577, -563, 596, -538, 572, -563, 571, -564, 571, -1671, 651, -1592, 570, -563, 597, -538, 571, -1672, 597, -1645, 
+                571, -1672, 571, -1671, 597]
+  - platform: template
+    name: "Optie 8"
+    id: optie_8
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9095, -4497, 571, -564, 623, -511, 572, -563, 572, -563, 571, -563, 597, -538, 572, -563, 572, -563, 571, -1671, 571, -1672, 571, -1672, 571, -1671, 571, -1672, 571, -1672, 642,
+                 -1601, 571, -1672, 571, -563, 572, -563, 572, -563, 571, -1671, 572, -1671, 597, -538, 571, -563, 572, -563, 572, -1671, 571, -1672, 571, -1671, 572, -563, 571, -563, 572, -1670, 
+                571, -1672, 571, -1671, 597]   
+  - platform: template
+    name: "Optie 9"
+    id: optie_9
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9065, -4522, 570, -564, 571, -558, 576, -563, 572, -563, 571, -564, 571, -563, 596, -538, 571, -563, 572, -1671, 571, -1671, 572, -1671, 623, -1619, 572, -1671, 571, -1671, 571,
+                 -1671, 572, -1670, 626, -509, 571, -1671, 571, -1671, 596, -1646, 571, -1671, 572, -562, 572, -1671, 571, -563, 571, -1671, 571, -563, 597, -538, 571, -563, 571, -563, 571, -1671, 
+                623, -511, 572, -1671, 652]
+  - platform: template
+    name: "Dim+"
+    id: dim_plus
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9037, -4548, 545, -588, 571, -563, 571, -564, 545, -589, 546, -589, 545, -589, 545, -589, 546, -589, 545, -1697, 545, -1697, 545, -1698, 545, -1696, 546, -1697, 545, -1697, 545,
+                 -1697, 545, -1697, 546, -588, 546, -589, 545, -589, 545, -1697, 545, -589, 545, -589, 545, -589, 545, -590, 545, -1697, 544, -1697, 545, -1698, 545, -589, 545, -1697, 545, -1698, 
+                545, -1697, 546, -1696, 546]
+  - platform: template
+    name: "Dim-"
+    id: dim_min
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9065, -4521, 570, -563, 571, -564, 571, -563, 571, -563, 597, -538, 571, -563, 621, -513, 571, -563, 571, -1672, 757, -1484, 572, -1670, 571, -1672, 571, -1671, 571, -1671, 596,
+                 -1646, 571, -1670, 572, -562, 572, -1670, 571, -563, 571, -1672, 570, -1671, 572, -562, 572, -1670, 572, -563, 570, -1672, 571, -563, 571, -1671, 571, -563, 596, -538, 572, -1671, 
+                571, -563, 571, -1671, 571]                                                                                               
+
+  - platform: restart
+    name: "Herstart"
+    icon: mdi:restart
+    entity_category: "config"  
+
+# Safe Mode
+  - platform: safe_mode
+    name: "! Safe Mode !"
+    icon: mdi:alert-octagram-outline
+    entity_category: "config"          
+
+# Status LED:
+status_led:
+  pin:
+    number: 2
+    ignore_strapping_warning: true
+
+# Herstart Informatie:
+text_sensor:
+  - platform: debug
+    reset_reason:
+      name: Herstart Informatie
+# IP Adres & SSID
+  - platform: wifi_info
+    ip_address:
+      name: IP Address
+      icon: mdi:ip-network-outline
+    ssid:
+      name: SSID
+      icon: mdi:wifi-lock
+# ESPHome Versie
+  - platform: version
+    name: ESPHome Versie
+    hide_timestamp: true
+    entity_category: diagnostic
+
+# Uptime Sensor
+sensor:
+  - platform: uptime
+    name: Uptime Verborgen
+    id: uptime_seconds    
+    unit_of_measurement: h
+    device_class: duration
+    state_class: total_increasing
+    entity_category: diagnostic
+    update_interval: 10s
+    icon: mdi:clock-start
+    internal: true
+  - platform: template
+    id: uptime_timestamp
+    name: Uptime
+    device_class: timestamp
+    entity_category: diagnostic
+    accuracy_decimals: 0
+    update_interval: never
+    icon: mdi:clock-start
+    lambda: |-
+      static float timestamp = (
+        id(huidige_tijd).utcnow().timestamp - id(uptime_seconds).state
+      );
+      return timestamp;
+
+# Wi-Fi Signaal Info
+  - platform: wifi_signal
+    name: Wi-Fi Signaalsterkte dB
+    icon: mdi:wifi
+    id: wifi_signal_db
+    update_interval: 10s
+    entity_category: "diagnostic"
+  - platform: copy # Reports the WiFi signal strength in %
+    source_id: wifi_signal_db
+    name: Wi-Fi Signaalsterkte
+    icon: mdi:signal
+    filters:
+      - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
+    unit_of_measurement: "%"
+    entity_category: "diagnostic"
+    device_class: ""
+# ESP32 Temperatuur
+  - platform: internal_temperature
+    name: "ESP32 Temperatuur"
+    id: esp32_temperatuur
+    icon: mdi:temperature-celsius
+    unit_of_measurement: "°C"
+    entity_category: "diagnostic"
+    device_class: temperature
+    update_interval: 10s    
+
+# Status:
+binary_sensor:
+  - platform: status
+    name: Status  
+    
