@@ -5,3 +5,5 @@ IR-codes afgevangen van https://www.123led.nl/123led-Start-adapter-voor-koppelba
 
 IR-codes zijn afgevangen via ESPHome en corresponderen met de funties zichtbaar op de afstandsbediening.
 ALLE codes zijn in RAW formaat! Deze codes zijn te implementeren via ESPHome middels een IR-transmitter.
+
+Het <urk voorbeeld ESPhome YAML bestand /> geeft je de basis, plus een aantal extra sensoren.
