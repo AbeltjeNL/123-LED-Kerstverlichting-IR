@@ -21,7 +21,7 @@ This file [ESPhome YAML bestand](https://github.com/AbeltjeNL/123-LED-Kerstverli
 [IR recevier](https://nl.aliexpress.com/item/1005008209444057.html?spm=a2g0o.productlist.main.12.2777nfUDnfUD3s&algo_pvid=ee757582-643f-4a08-b5e4-7bd55d845b54&algo_exp_id=ee757582-643f-4a08-b5e4-7bd55d845b54-11&pdp_ext_f=%7B%22order%22%3A%2228%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%218.88%210.87%21%21%2171.52%217.01%21%402103892f17633384163884488eca67%2112000044241692141%21sea%21NL%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6ba8c67a%3Bm03_new_user%3A-29895%3BpisId%3A5000000187474279&curPageLogUid=sqmJXoanmNDO&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005008209444057%7C_p_origin_prod%3A)
 
 > [!WARNING]  
-```This product (adapter) produces noise. This noise occurs during the playback of (visual) effects. These sounds are audible near the adapter!```
+```This product (adapter) produces noise (coil whine). This noise occurs during the playback of (visual) effects. These sounds are audible near the adapter!```
 ```Personally, I don't like this. Listen for yourself! These sounds are unrelated to the ESPHome implementation!```
 
 > [!CAUTION]
