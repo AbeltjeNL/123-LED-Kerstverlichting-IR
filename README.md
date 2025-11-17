@@ -4,7 +4,7 @@ Implemenatie moeilijkheidsgraad: gemakkelijk!
 # 123LED-Kerstverlichting-IR-31V
 <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/8c414ad2-5993-4204-9ff7-a60b6827cca9" />
 
-IR-codes afgevangen van [Start-adapter voor koppelbare kerstverlichting | 31V](https://www.123led.nl/123led-Start-adapter-voor-koppelbare-kerstverlichting-31V-i7758-t2096.html)
+IR-codes zijn afgevangen van [Start-adapter voor koppelbare kerstverlichting | 31V](https://www.123led.nl/123led-Start-adapter-voor-koppelbare-kerstverlichting-31V-i7758-t2096.html)
 
 IR-codes zijn afgevangen via ESPHome en corresponderen met de funties zichtbaar op de afstandsbediening.
 ALLE codes zijn in RAW formaat! Deze codes zijn te implementeren via ESPHome middels een IR-transmitter.
