@@ -20,3 +20,6 @@ De reveiver module is vrij goedkoop te vinden op Ali:
 > [!WARNING]  
 ```Dit prodcut (adapter) maakt geluid. Geluid tijdens het afspelen (visueel) van effecten. Deze geluiden zijn hoorbaard vlakbij de adapter!```
 ```Persoonlijk vind ik dit niet prettig. Luister zelf! Deze geluiden staan los van de impltementatie met ESPHome!```
+
+> [!NOTE]
+Gezien dit (vervelende) geluid is de verdere uitwerking gestopt. 
