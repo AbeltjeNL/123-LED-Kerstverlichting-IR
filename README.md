@@ -9,7 +9,7 @@ IR-codes zijn afgevangen van [Start-adapter voor koppelbare kerstverlichting | 3
 IR-codes zijn afgevangen via ESPHome en corresponderen met de funties zichtbaar op de afstandsbediening.
 ALLE codes zijn in RAW formaat! Deze codes zijn te implementeren via ESPHome middels een IR-transmitter.
 
-Het volgende [ESPhome YAML bestand](https://github.com/AbeltjeNL/123-LED-Kerstverlichting-IR/blob/main/esphome_example.yaml) geeft je de basis, plus een aantal extra sensoren.
+Het volgende [ESPhome YAML] bestand(https://github.com/AbeltjeNL/123-LED-Kerstverlichting-IR/blob/main/esphome_example.yaml) geeft je de basis, plus een aantal extra sensoren.
 
 De transmitter module is vrij goedkoop te vinden op Ali:
 [IR transmitter (Dual)](https://nl.aliexpress.com/item/1005008822755413.html?spm=a2g0o.productlist.main.1.424c311bfjJKxK&aem_p4p_detail=2025111616102312006147310864980003321500&algo_pvid=23aa11bf-80ec-4a4f-b53a-6dab64c4f17d&algo_exp_id=23aa11bf-80ec-4a4f-b53a-6dab64c4f17d-0&pdp_ext_f=%7B%22order%22%3A%223%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%212.90%212.90%21%21%2123.38%2123.38%21%402103956a17633382237446344e506a%2112000046824663054%21sea%21NL%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6ba8c67a%3Bm03_new_user%3A-29895&curPageLogUid=WADHPXuYWOkf&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005008822755413%7C_p_origin_prod%3A&search_p4p_id=2025111616102312006147310864980003321500_1)
