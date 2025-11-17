@@ -12,7 +12,7 @@ ALLE codes zijn in RAW formaat! Deze codes zijn te implementeren via ESPHome mid
 
 Het volgende [ESPhome YAML bestand](https://github.com/AbeltjeNL/123-LED-Kerstverlichting-IR/blob/main/esphome_example.yaml) geeft je de basis, plus een aantal extra sensoren.
 
-> [!NOTE]
+> [!IMPORTANT]
 ```!Pas hierin de ESPHome configuratie aan zodat deze voor jou van toepassing is!```
 
 De transmitter module is vrij goedkoop te vinden op Ali:
