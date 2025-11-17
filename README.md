@@ -6,7 +6,7 @@ ESPHome implementation difficulty: easy!
 
 IR codes captured from [Start-adapter voor koppelbare kerstverlichting | 31V](https://www.123led.nl/123led-Start-adapter-voor-koppelbare-kerstverlichting-31V-i7758-t2096.html)
 
-IR codes are captured via ESPHome and correspond to the functions (buttons) visible on the remote control.
+IR codes are captured via ESPHome and correspond to the functions (buttons) visible on the remote.
 All codes are in RAW format! These codes can be implemented via ESPHome using an IR transmitter.
 
 This file [ESPhome YAML bestand](https://github.com/AbeltjeNL/123-LED-Kerstverlichting-IR/blob/main/esphome_example.yaml) gives you the basics, plus some extra sensors.
