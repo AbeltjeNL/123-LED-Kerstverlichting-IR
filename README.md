@@ -28,5 +28,5 @@ This file [ESPhome YAML bestand](https://github.com/AbeltjeNL/123-LED-Kerstverli
 Due to this (annoying) noise, further development was stopped.
 
 > [!NOTE]
-Write basic ESPHome yaml configuration.
+Write basic ESPHome yaml configuration. @AbeltjeNL!
 
