@@ -1,4 +1,4 @@
-[!NOTE]
+> [!NOTE]
 Implemenatie moeilijkheidsgraad: gemakkelijk!
 
 # 123LED-Kerstverlichting-IR-31V
