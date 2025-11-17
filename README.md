@@ -1,5 +1,5 @@
 > [!TIP]
-Implementation difficulty: easy!
+ESPHome implementation difficulty: easy!
 
 # 123LED-Kerstverlichting-IR-31V
 <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/8c414ad2-5993-4204-9ff7-a60b6827cca9" />
