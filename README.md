@@ -21,7 +21,7 @@ Kopen: De reveiver module is vrij goedkoop te vinden op Ali:
 [IR recevier](https://nl.aliexpress.com/item/1005008209444057.html?spm=a2g0o.productlist.main.12.2777nfUDnfUD3s&algo_pvid=ee757582-643f-4a08-b5e4-7bd55d845b54&algo_exp_id=ee757582-643f-4a08-b5e4-7bd55d845b54-11&pdp_ext_f=%7B%22order%22%3A%2228%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%218.88%210.87%21%21%2171.52%217.01%21%402103892f17633384163884488eca67%2112000044241692141%21sea%21NL%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6ba8c67a%3Bm03_new_user%3A-29895%3BpisId%3A5000000187474279&curPageLogUid=sqmJXoanmNDO&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005008209444057%7C_p_origin_prod%3A)
 
 > [!WARNING]  
-```Dit prodcut (adapter) maakt geluid. Geluid tijdens het afspelen (visueel) van effecten. Deze geluiden zijn hoorbaard vlakbij de adapter!```
+```Dit product (adapter) maakt geluid. Geluid tijdens het afspelen (visueel) van effecten. Deze geluiden zijn hoorbaard vlakbij de adapter!```
 ```Persoonlijk vind ik dit niet prettig. Luister zelf! Deze geluiden staan los van de impltementatie met ESPHome!```
 
 > [!CAUTION]
