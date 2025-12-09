@@ -5,6 +5,8 @@ ESPHome implementation difficulty: easy!
 <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/8c414ad2-5993-4204-9ff7-a60b6827cca9" />
 
 IR codes captured from [Start-adapter voor koppelbare kerstverlichting | 31V](https://www.123led.nl/123led-Start-adapter-voor-koppelbare-kerstverlichting-31V-i7758-t2096.html)
+The Adapter is also available on AliExpress [Power Adapter US/EU Plug AC 31V](Ik heb dit zojuist gevonden op AliExpress: €3,27 | Power Adapter US/EU Plug AC 31V (https://a.aliexpress.com/_EvMPltS
+
 
 IR codes are captured via ESPHome and correspond to the functions (buttons) visible on the remote.
 All codes are in RAW format! These codes can be implemented via ESPHome using an IR transmitter.
